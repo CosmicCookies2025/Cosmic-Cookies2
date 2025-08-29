@@ -1,0 +1,314 @@
+/* Cosmic Cookies Site Styles */
+
+/* Root color palette for easy theming */
+:root {
+  --primary: #1e163a;
+  --secondary: #241c46;
+  --accent: #eb5a9e;
+  --text: #ffffff;
+  --card-bg: rgba(255, 255, 255, 0.05);
+}
+
+body {
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+  color: var(--text);
+  background: var(--primary);
+}
+
+/* Sticky header with logo and navigation */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  background: var(--secondary);
+  z-index: 1000;
+}
+
+.logo {
+  position: relative;
+  font-size: 1.8rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+/* Background cookie silhouette behind the brand name */
+.logo .cookie-bg {
+  position: absolute;
+  top: -10px;
+  left: -40px;
+  width: 80px;
+  height: auto;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* Desktop navigation styling */
+nav.desktop-nav a {
+  margin: 0 1rem;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+nav.desktop-nav a:hover {
+  color: var(--accent);
+}
+
+/* Hamburger button hidden on desktop */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--text);
+  cursor: pointer;
+}
+
+/* Mobile navigation hidden by default */
+nav.mobile-nav {
+  display: none;
+  flex-direction: column;
+  background: var(--secondary);
+  padding: 1rem;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 200px;
+  border-radius: 0 0 0 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+nav.mobile-nav a {
+  margin: 0.5rem 0;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+nav.mobile-nav a:hover {
+  color: var(--accent);
+}
+
+/* Show mobile nav when toggled */
+nav.mobile-nav.show {
+  display: flex;
+}
+
+/* Hero section with cosmic background */
+.hero {
+  background-image: url('cosmic_bg.png');
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 6rem 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Overlay gradient on hero to improve text contrast */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(30, 22, 58, 0.6) 0%, rgba(30, 22, 58, 0.9) 100%);
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: 800;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+/* Call-to-action button styling */
+.cta-btn {
+  background: var(--accent);
+  color: var(--text);
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 700;
+  display: inline-block;
+  transition: background 0.3s;
+}
+
+.cta-btn:hover {
+  background: #c54885;
+}
+
+/* Products section */
+.products {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.products h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-weight: 800;
+}
+
+.product-grid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(8px);
+  padding: 1.5rem;
+  border-radius: 16px;
+  width: 280px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.product-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.product-card p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  line-height: 1.4;
+}
+
+/* Generic content section styling for informational pages */
+.content {
+  padding: 4rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.content h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  font-weight: 800;
+}
+
+.content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+/* FAQ list styling */
+.faq-list {
+  text-align: left;
+}
+
+.faq-item {
+  margin-bottom: 1.5rem;
+}
+
+.faq-item h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.faq-item p {
+  font-size: 0.95rem;
+  margin-left: 0.5rem;
+  opacity: 0.9;
+}
+
+/* Locations grid styling */
+.locations-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.location-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(8px);
+  padding: 1.5rem;
+  border-radius: 12px;
+  width: 280px;
+  text-align: left;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.location-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.location-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
+  font-weight: 700;
+}
+
+.location-card p {
+  font-size: 0.9rem;
+  opacity: 0.85;
+  line-height: 1.4;
+}
+
+/* Footer styling */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: var(--secondary);
+  color: var(--text);
+  font-size: 0.8rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  nav.desktop-nav {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  .product-card {
+    width: 100%;
+    max-width: 320px;
+  }
+}

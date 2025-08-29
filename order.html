@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Cosmic Cookies</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img
+          src="cookie_logo.png"
+          alt="Cookie silhouette"
+          class="cookie-bg"
+        />
+        <span>Cosmic Cookies</span>
+      </div>
+      <nav class="desktop-nav">
+        <a href="order.html" class="active">Order</a>
+        <a href="delivery.html">Delivery</a>
+        <a href="pickup.html">Pickup</a>
+        <a href="catering.html">Catering</a>
+        <a href="giftcards.html">Gift&nbsp;Cards</a>
+        <a href="faq.html">FAQ</a>
+        <a href="locations.html">Locations</a>
+      </nav>
+      <button class="hamburger" id="hamburger-btn">&#9776;</button>
+    </header>
+    <nav class="mobile-nav" id="mobileNav">
+      <a href="order.html">Order</a>
+      <a href="delivery.html">Delivery</a>
+      <a href="pickup.html">Pickup</a>
+      <a href="catering.html">Catering</a>
+      <a href="giftcards.html">Gift&nbsp;Cards</a>
+      <a href="faq.html">FAQ</a>
+      <a href="locations.html">Locations</a>
+    </nav>
+
+    <section class="products">
+      <h2>Order Cosmic Treats</h2>
+      <form id="order-form" style="max-width: 600px; margin: 0 auto; text-align: left;">
+        <fieldset style="border: none; margin-bottom: 2rem;">
+          <legend style="font-weight: 700; margin-bottom: 1rem; font-size: 1.2rem;">Choose your cookie pack</legend>
+          <label style="display: block; margin-bottom: 0.5rem;">
+            <input type="radio" name="product" value="Galactic Swirl" checked />
+            Galactic Swirl
+          </label>
+          <label style="display: block; margin-bottom: 0.5rem;">
+            <input type="radio" name="product" value="Stellar Sprinkle" />
+            Stellar Sprinkle
+          </label>
+          <label style="display: block; margin-bottom: 0.5rem;">
+            <input type="radio" name="product" value="Planetary Delight" />
+            Planetary Delight
+          </label>
+        </fieldset>
+
+        <fieldset style="border: none; margin-bottom: 2rem;">
+          <legend style="font-weight: 700; margin-bottom: 1rem; font-size: 1.2rem;">Order details</legend>
+          <label style="display: block; margin-bottom: 1rem;">
+            Quantity
+            <input type="number" name="quantity" min="1" max="10" value="1" style="width: 100%; padding: 0.5rem; border-radius: 8px; border: none; margin-top: 0.25rem;" />
+          </label>
+          <label style="display: block; margin-bottom: 1rem;">
+            Desired date
+            <input type="date" name="date" required style="width: 100%; padding: 0.5rem; border-radius: 8px; border: none; margin-top: 0.25rem;" />
+          </label>
+          <label style="display: block; margin-bottom: 1rem;">
+            Desired time
+            <input type="time" name="time" required style="width: 100%; padding: 0.5rem; border-radius: 8px; border: none; margin-top: 0.25rem;" />
+          </label>
+        </fieldset>
+
+        <fieldset style="border: none; margin-bottom: 2rem;">
+          <legend style="font-weight: 700; margin-bottom: 1rem; font-size: 1.2rem;">Pickup or delivery</legend>
+          <label style="display: block; margin-bottom: 0.5rem;">
+            <input type="radio" name="method" value="pickup" checked /> Pickup
+          </label>
+          <label style="display: block; margin-bottom: 0.5rem;">
+            <input type="radio" name="method" value="delivery" /> Delivery
+          </label>
+          <label style="display: block; margin-top: 1rem;">
+            Delivery address (optional)
+            <input type="text" name="address" placeholder="123 Star Lane" style="width: 100%; padding: 0.5rem; border-radius: 8px; border: none; margin-top: 0.25rem;" />
+          </label>
+        </fieldset>
+
+        <button type="submit" class="cta-btn" style="display: block; margin: 0 auto;">Place Order</button>
+      </form>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Cosmic Cookies. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+      // basic validation and fake submission for demonstration
+      document.getElementById('order-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        alert('Thank you! Your cosmic order has been placed.');
+      });
+    </script>
+  </body>
+</html>
